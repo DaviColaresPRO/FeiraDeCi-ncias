@@ -9,22 +9,22 @@
 def convert():
     if convertede.get() == "°C (Celsius)" and convertepara.get() == "K (Kelvin)":
         vartemp = float(valortemp.get()) + 273
-        temper.set(vartemp)
+        temper.set("%.2f" % vartemp)
     elif convertede.get() == "K (Kelvin)" and convertepara.get() == "°C (Celsius)":
         vartemp = float(valortemp.get()) - 273
-        temper.set(vartemp)
-    elif convertede.get() == "°C (Celsius)" and convertepara.get() == "°F (Fahrnheit)":
+        temper.set("%.2f" % vartemp)
+    elif convertede.get() == "°C (Celsius)" and convertepara.get() == "°F (Fahrenheit)":
         vartemp = 1.8 * float(valortemp.get()) + 32
-        temper.set(vartemp)
-    elif convertede.get() == "°F (Fahrnheit)" and convertepara.get() == "°C (Celsius)":
+        temper.set("%.2f" % vartemp)
+    elif convertede.get() == "°F (Fahrenheit)" and convertepara.get() == "°C (Celsius)":
         vartemp = (float(valortemp.get()) - 32) / 1.8
-        temper.set(vartemp)
-    elif convertede.get() == "K (Kelvin)" and convertepara.get() == "°F (Fahrnheit)":
+        temper.set("%.2f" % vartemp)
+    elif convertede.get() == "K (Kelvin)" and convertepara.get() == "°F (Fahrenheit)":
         vartemp = (((float(valortemp.get()) - 273) / 5 ) * 9) + 32
-        temper.set(vartemp)
-    elif convertede.get() == "°F (Fahrnheit)" and convertepara.get() == "K (Kelvin)":
+        temper.set("%.2f" % vartemp)
+    elif convertede.get() == "°F (Fahrenheit)" and convertepara.get() == "K (Kelvin)":
         vartemp = (((float(valortemp.get()) - 32) / 9 ) * 5) + 273
-        temper.set(vartemp)
+        temper.set("%.2f" % vartemp)
     elif convertede.get() == convertepara.get():
         messagebox.showerror('Erro!',
         'Não é possível converter duas unidades iguais')
@@ -37,7 +37,7 @@ temperatura = Tk()
 temperatura.title("Conversor de Temperaturas")
 
 #Unidades de medida de temperatura                          #
-conversoes = "°C (Celsius)", "K (Kelvin)", "°F (Fahrnheit)"
+conversoes = "°C (Celsius)", "K (Kelvin)", "°F (Fahrenheit)"
 
 
 valortemp = Entry(temperatura) 
